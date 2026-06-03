@@ -17,6 +17,48 @@ LINKS_SECTION_MARKER = "<!-- HTML_LINKS_START -->"
 LINKS_SECTION_END_MARKER = "<!-- HTML_LINKS_END -->"
 
 
+def extract_date_from_filename(filename):
+    """从文件名中提取日期，返回 (year, month, day) 元组或 None"""
+    # 匹配格式：YYYY_MM_DD 或 YYYY-MM-DD
+    patterns = [
+        r'(\d{4})[\-_](\d{2})[\-_](\d{2})',
+        r'(\d{4})(\d{2})(\d{2})',
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, filename)
+        if match:
+            year, month, day = match.groups()
+            return (year, month, day)
+    return None
+
+
+def organize_html_file(file_path):
+    """将 HTML 文件移动到正确的年/月/日目录结构中"""
+    filename = file_path.name
+    date_parts = extract_date_from_filename(filename)
+
+    if not date_parts:
+        print(f"  ⚠️  无法从文件名提取日期: {filename}")
+        return file_path
+
+    year, month, day = date_parts
+    target_dir = Path(year) / month / day
+    target_path = target_dir / filename
+
+    # 如果文件已经在正确的位置，不需要移动
+    if file_path == target_path:
+        return file_path
+
+    # 创建目标目录
+    target_dir.mkdir(parents=True, exist_ok=True)
+
+    # 移动文件
+    print(f"  📁  {filename} -> {target_path}")
+    file_path.rename(target_path)
+
+    return target_path
+
+
 def find_html_files():
     """查找所有 HTML 文件，按日期排序（最新的在前）"""
     html_files = []
@@ -24,10 +66,14 @@ def find_html_files():
         # 排除常见的非项目目录
         if any(part.startswith((".", "_")) for part in file_path.parts[:-1]):
             continue
+
+        # 如果文件不在年/月/日目录结构中，尝试移动它
+        file_path = organize_html_file(file_path)
+
         # 获取相对路径（用于生成URL）
         rel_path = file_path.relative_to(Path("."))
         html_files.append(rel_path)
-    
+
     # 按文件路径排序（包含日期信息）
     return sorted(html_files, key=lambda x: str(x), reverse=True)
 
