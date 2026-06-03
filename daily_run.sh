@@ -69,8 +69,14 @@ else
     print_success "README.md 已更新"
 fi
 
-# 获取当前日期用于 commit message
-current_date=$(date +"%Y/%m/%d")
+# 获取前一天日期用于 commit message
+if date -v-1d +"%Y/%m/%d" >/dev/null 2>&1; then
+    # macOS (BSD date)
+    current_date=$(date -v-1d +"%Y/%m/%d")
+else
+    # Linux (GNU date)
+    current_date=$(date -d "1 day ago" +"%Y/%m/%d")
+fi
 commit_message="feat: add daily AI pulse for ${current_date}"
 
 # 添加所有变更到 git
