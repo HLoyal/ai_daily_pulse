@@ -61,7 +61,7 @@ def organize_html_file(file_path):
 
 def find_html_files():
     """查找所有 HTML 文件，按日期排序（最新的在前）"""
-    html_files = []
+    html_files = set()  # 使用集合去重
     for file_path in Path(".").rglob("*.html"):
         # 排除常见的非项目目录
         if any(part.startswith((".", "_")) for part in file_path.parts[:-1]):
@@ -72,7 +72,7 @@ def find_html_files():
 
         # 获取相对路径（用于生成URL）
         rel_path = file_path.relative_to(Path("."))
-        html_files.append(rel_path)
+        html_files.add(rel_path)
 
     # 按文件路径排序（包含日期信息）
     return sorted(html_files, key=lambda x: str(x), reverse=True)
