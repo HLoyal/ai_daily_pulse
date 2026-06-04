@@ -1,4 +1,4 @@
-# ai_daily_pulse
+# AI Daily Pulse
 
 <!-- HTML_LINKS_START -->
 
@@ -11,6 +11,6 @@
 | 2026-06-03 | `2026/06/03/2026_06_03_ai.html` | [👉 点击预览](https://HLoyal.github.io/ai_daily_pulse/2026/06/03/2026_06_03_ai.html) |
 | 2026-06-02 | `2026/06/02/2026_06_02_ai.html` | [👉 点击预览](https://HLoyal.github.io/ai_daily_pulse/2026/06/02/2026_06_02_ai.html) |
 
-*最后更新时间: 2026-06-04 10:34:42*
+*最后更新时间: 2026-06-04 10:38:52*
 
 <!-- HTML_LINKS_END -->
