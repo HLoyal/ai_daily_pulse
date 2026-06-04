@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiDailyPulse - 2026.06.03 前沿简报</title>
+    <style>
+        /* 现代全局排版 */
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --text-primary: #f0f4f8;
+            --text-secondary: #a0aec0;
+            --accent-color: #63b3ed;
+            --hover-accent: #90cdf4;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #111827, #1f2937, #111827);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* 页面容器 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 简报头部 */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+
+        /* 毛玻璃卡片网格布局 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* 毛玻璃卡片基础样式 */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* 卡片标题 */
+        .card-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* 资讯列表 */
+        .news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .news-item {
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+        }
+
+        .news-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 链接样式 */
+        .news-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s ease;
+        }
+
+        .news-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* 来源角标 */
+        .source-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            background: rgba(99, 179, 237, 0.1);
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-top: 6px;
+            text-decoration: none;
+        }
+
+        .source-tag:hover {
+            background: rgba(99, 179, 237, 0.2);
+            color: var(--hover-accent);
+        }
+
+        /* 底部 */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>AiDailyPulse</h1>
+        <p>为您精选的全球 AI 前沿动态 ｜ 2026.06.03 推送（汇编 2026.06.02 全天资讯）</p>
+    </div>
+
+    <div class="news-grid">
+        <div class="glass-card">
+            <div class="card-title">🚀 AI 算力芯片</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <a href="https://blogs.nvidia.com/" class="news-link" target="_blank">
+                        NVIDIA 针对新一代 Blackwell 架构芯片进行固件级热管理算法升级，以解决超大规模全液冷机架在连续高负载推理下的瞬态功耗波动问题。
+                    </a>
+                    <a href="https://blogs.nvidia.com/" class="source-tag" target="_blank">来源: NVIDIA News</a>
+                </li>
+                <li class="news-item">
+                    <a href="https://www.amd.com/en/newsroom.html" class="news-link" target="_blank">
+                        AMD 披露其定制化 HBM3e 供应链新进展，旨在进一步扩充第五代 EPYC 处理器与下一代加速器的混合互联带宽，对抗供应紧缺。
+                    </a>
+                    <a href="https://www.amd.com/en/newsroom.html" class="source-tag" target="_blank">来源: AMD Newsroom</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-title">🧩 AI 编译器生态</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <a href="https://github.com/openxla/xla" class="news-link" target="_blank">
+                        OpenXLA 编译器社区合并了关于动态形状（Dynamic Shapes）的高级多维切片优化，重点改善了混合专家模型 (MoE) 在非齐次 Token 分配时的编译开销。
+                    </a>
+                    <a href="https://github.com/openxla/xla" class="source-tag" target="_blank">来源: GitHub (OpenXLA)</a>
+                </li>
+                <li class="news-item">
+                    <a href="https://tvm.apache.org/" class="news-link" target="_blank">
+                        Apache TVM 社区发布 Unity 架构下的新一轮优化指标，针对端侧 NPU 的多线程异构流水线排程能力得到重构，显著降低长文本导出的首字延迟。
+                    </a>
+                    <a href="https://tvm.apache.org/" class="source-tag" target="_blank">来源: Apache TVM</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-title">🔥 torch.compile 社区</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <a href="https://github.com/pytorch/pytorch/issues" class="news-link" target="_blank">
+                        PyTorch 核心团队针对 <code>torch.compile</code> 提交了 AOTAutograd 的内存复用深度优化，解决在特定的多层 Transformer 反向传播中不必要的激活值重计算。
+                    </a>
+                    <a href="https://github.com/pytorch/pytorch/issues" class="source-tag" target="_blank">来源: GitHub (PyTorch)</a>
+                </li>
+                <li class="news-item">
+                    <a href="https://dev-discuss.pytorch.org/" class="news-link" target="_blank">
+                        社区开发者针对 <code>Inductor</code> 后端发起关于 Triton 内核自动调优（Auto-tuning）缓存机制的重构讨论，有望缩短大规模分布式训练的首次热启动编译时间。
+                    </a>
+                    <a href="https://dev-discuss.pytorch.org/" class="source-tag" target="_blank">来源: PyTorch Dev-Discuss</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-title">⚡ 大模型训练与推理</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <a href="https://github.com/vllm-project/vllm" class="news-link" target="_blank">
+                        vLLM 发布最新合并的 FP4/FP8 混合精度流式推理 Kernel 规范，针对万亿级参数级模型在单机多卡环境下的张量并行吞吐性能提升了 22%。
+                    </a>
+                    <a href="https://github.com/vllm-project/vllm" class="source-tag" target="_blank">来源: GitHub (vLLM)</a>
+                </li>
+                <li class="news-item">
+                    <a href="https://huggingface.co/blog" class="news-link" target="_blank">
+                        Hugging Face 联合社区推出分布式轻量化微调最佳实践，重点针对 100B 级别以上大模型在千兆网带宽环境下的梯度压缩和高效流水线划分进行技术开源。
+                    </a>
+                    <a href="https://huggingface.co/blog" class="source-tag" target="_blank">来源: Hugging Face Blog</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-title">🤖 具身智能</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <a href="https://openai.com/news/" class="news-link" target="_blank">
+                        继 OpenAI 宣布重启机器人团队后，其内部关于物理世界多模态交互的 VLA（Vision-Language-Action）底座模型测试细节受到业界持续追踪，数据回环效率成为主攻方向。
+                    </a>
+                    <a href="https://openai.com/news/" class="source-tag" target="_blank">来源: OpenAI News</a>
+                </li>
+                <li class="news-item">
+                    <a href="https://bair.berkeley.edu/blog/" class="news-link" target="_blank">
+                        伯克利 AI 研究所（BAIR）发布基于强化学习的新型足式机器人地形自适应算法，使得具身智能体在未知复杂动态物理环境中的跌倒恢复成功率大幅提升。
+                    </a>
+                    <a href="https://bair.berkeley.edu/blog/" class="source-tag" target="_blank">来源: BAIR Blog</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-title">🌐 AI 模型 & Agent 工具</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <a href="https://github.com/langchain-ai/langgraph" class="news-link" target="_blank">
+                        LangGraph 团队推出面向复杂多阶段推理 Agent 的短时状态恢复（Short-term State Rollback）机制，降低多 Agent 协同因单点崩溃导致的整个计算图重置率。
+                    </a>
+                    <a href="https://github.com/langchain-ai/langgraph" class="source-tag" target="_blank">来源: GitHub (LangGraph)</a>
+                </li>
+                <li class="news-item">
+                    <a href="https://www.anthropic.com/news" class="news-link" target="_blank">
+                        Anthropic 升级其开发者控制台中的 Agent 交互跟踪与长上下文调试工具，重点解决高并发生产环境下 Tool Use 逻辑中偶发的闭环死循环识别问题。
+                    </a>
+                    <a href="https://www.anthropic.com/news" class="source-tag" target="_blank">来源: Anthropic News</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>由 AiDailyPulse 生成并自动推送 ✨ | 驱动前沿技术的每一天</p>
+    </div>
+</div>
+
+</body>
+</html>
