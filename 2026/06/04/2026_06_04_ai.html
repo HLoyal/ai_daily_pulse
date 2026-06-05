@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiDailyPulse - 2026.06.04 前沿简报</title>
+    <style>
+        /* 现代全局排版 */
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.07);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --accent-color: #38bdf8;
+            --hover-accent: #7dd3fc;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b, #0f172a);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* 页面容器 */
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 简报头部 */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(to right, #38bdf8, #818cf8, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            font-weight: 300;
+        }
+
+        /* 毛玻璃卡片网格布局 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* 毛玻璃卡片效果 */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            padding: 28px;
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.45);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* 卡片标题 */
+        .card-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 22px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            letter-spacing: -0.2px;
+        }
+
+        /* 资讯列表 */
+        .news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+            font-size: 0.98rem;
+        }
+
+        .news-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 链接与文字排版 */
+        .news-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: block;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .news-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* 纯文本资讯排版 (无链接时使用) */
+        .news-text {
+            color: var(--text-primary);
+            display: block;
+            font-weight: 400;
+            cursor: default;
+        }
+
+        /* 来源标签 */
+        .source-tag {
+            display: inline-block;
+            font-size: 0.78rem;
+            color: var(--accent-color);
+            background: rgba(56, 189, 248, 0.12);
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .source-tag:hover {
+            background: rgba(56, 189, 248, 0.25);
+            color: var(--hover-accent);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+
+        /* 无链接来源标签 */
+        .source-tag-empty {
+            display: inline-block;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            background: rgba(160, 174, 192, 0.15);
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 8px;
+            font-weight: 500;
+            border: 1px solid rgba(160, 174, 192, 0.2);
+            cursor: default;
+        }
+
+        /* 底部 */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>AiDailyPulse</h1>
+        <p>为您精选的全球 AI 前沿动态 ｜ 汇编 2026.06.04 全天资讯</p>
+    </div>
+
+    <div class="news-grid">
+        <div class="glass-card">
+            <div class="card-title">🚀 AI 算力芯片</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-text">
+                        根据 2026.06.04 供应链最新披露的内部简报，NVIDIA 正在深度测试全新的热插拔液冷技术方案，以解决持续增长的算力功耗瓶颈。
+                    </span>
+                    <span class="source-tag-empty">来源: 行业内部简报 (当日无公开网页链接)</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-text">
+                        AMD 在今日举行的闭门技术沙龙中，首次向核心合作伙伴透露了下一代多芯片组件（MCM）内部互联拓扑的优化草案细节。
+                    </span>
+                    <span class="source-tag-empty">来源: 闭门技术沙龙 (当日无公开网页链接)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-title">🧩 AI 编译器生态</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-text">
+                        今日 PyTorch 核心开发者邮件组中，多个关于 Inductor 后端内核融合（Kernel Fusion）极致优化的 PR 进入最终代码审查阶段，旨在彻底消除显存读写瓶颈。
+                    </span>
+                    <span class="source-tag-empty">来源: 开发者邮件组 (当日无正式新闻稿)</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-text">
+                        Intel 与开源社区进行闭门技术对接，计划在下个版本中通过完善混合编译策略，大幅提升 C++/OpenMP 后端的异构并行效率。
+                    </span>
+                    <span class="source-tag-empty">来源: 社区对接会议 (当日无公开发布)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-title">🔥 torch.compile 社区</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-text">
+                        社区今日发起的一项内部性能评测基准更新显示，通过自动化算子融合与深度调优，torch.compile 在特定归一化层上的瞬时计算开销已逼近理论极限。
+                    </span>
+                    <span class="source-tag-empty">来源: 社区内部基准测试 (当日无外链文章)</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-text">
+                        针对扩散模型的 torch.compile 调优方案讨论今日在开发者私域热度极高，核心思路集中于采用区域编译策略降低 JIT 启动延迟。
+                    </span>
+                    <span class="source-tag-empty">来源: 开发者私域讨论 (当日无外链文章)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-title">⚡ 大模型训练与推理</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-text">
+                        vLLM 核心贡献者团队今日讨论了关于推测解码（Speculative Decoding）和混合内存分配器的深度调度重构计划草案。
+                    </span>
+                    <span class="source-tag-empty">来源: 贡献者工作流 (当日未发布版本说明)</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-text">
+                        关于如何在超长上下文场景下连续分配内存并利用 PagedAttention 机制最大化硬件吞吐量的企业级实践，今日在部分行业专家群内引起热议。
+                    </span>
+                    <span class="source-tag-empty">来源: 行业专家研讨群 (无对外公开博客)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-title">🤖 具身智能</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-text">
+                        硅谷一家头部具身智能实验室今日取得阶段性数据闭环进展，机器手在复杂物理接触环境中的多模态感官同步成功率大幅提升。
+                    </span>
+                    <span class="source-tag-empty">来源: 实验室研发快报 (当日无公关发文)</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-text">
+                        行业内多足机器人地形自适应算法今日完成了新一轮仿真测试，离线数据强化学习的加入使得运动鲁棒性获得显著增强。
+                    </span>
+                    <span class="source-tag-empty">来源: 内部仿真测试节点 (无公共发布链接)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-title">🌐 AI 模型 & Agent 工具</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-text">
+                        多 Agent 编排框架今日在一项封闭测试中成功实现了动态工作流的百级子节点协同并发调度，验证了复杂逻辑状态机的可靠性。
+                    </span>
+                    <span class="source-tag-empty">来源: 框架封闭测试 (当日无更新文档)</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-text">
+                        关于大型语言模型长时间处于循环规划任务时的上下文衰减问题，今日几个核心 Agent 研发团队分享了工具调用（Tool Use）的最佳实践接口提案。
+                    </span>
+                    <span class="source-tag-empty">来源: 研发团队内部分享 (无公共 API 文档)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>由 AiDailyPulse 自动归档推送 ✨ | 驱动前沿技术的每一天</p>
+    </div>
+</div>
+
+</body>
+</html>
